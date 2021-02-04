@@ -5,25 +5,46 @@ import openpyxl
 import wps
 import pywps
 
-xls_st2 = '/home/cliff/tmp/st2.xlsx'
+xls_st2 = '/home/cliff/tmp/lf_temp.xlsx'
 
-wb_r = openpyxl.load_workbook(xls_st2, data_only=True)
-wb_w = openpyxl.load_workbook(xls_st2, data_only=False)
-ws_r = wb_r.get_sheet_by_name(wb_r.get_sheet_names()[0])
-ws_w = wb_w.get_sheet_by_name(wb_w.get_sheet_names()[0])
+# ===================================================通用
+#pre0 生成随机数
 
-def input_acuracy_3(input_3):
-    origin_input_3=[]
-    origin_input_3.append(ws_r.cell(34,3).value)
-    origin_input_3.append(ws_r.cell(35,3).value)
-    origin_input_3.append(ws_r.cell(36,3).value)
-    print(origin_input_3)
-    ws_w.cell(34,3,input_3[0])
-    ws_w.cell(35,3,input_3[1])
-    ws_w.cell(36,3,input_3[2])
-    wb_w.save(xls_st2)
-    pywps.inout.inputs
-    print(ws_r.cell(40,3).value)
-    print(ws_r.cell(40,2).value)
+#pre1 公式生存随机数(偏差小)
 
-input_acuracy_3([0.5,0.52,0.53])
+
+#pre2 把合格随机数写入xlsx
+
+
+#pre3 公式
+
+
+
+# ===================================================具体项
+#0.主曲线+双对数
+
+#1. 定标
+
+#2. 准确度
+
+#3. 最低检测限
+
+
+#4. 线性
+
+
+#5. 批内及批间精密度
+
+
+#6. 特异性
+
+#7. 批间差
+
+#8. 校准品
+#8.1 校准品均一性
+#8.1.1 同批号五瓶校
+
+#8.1.2 同一瓶五次测定
+
+#8.2 校准品准确性
+
