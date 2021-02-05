@@ -14,15 +14,7 @@ flags = [
 '-I',
 '/home/cliff/pyworkspace/lf_xls/utils',
 '-I',
-'/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-3',
-'-I',
-'/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-2',
-'-I',
-'/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-1',
-'-I',
-'/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602',
-'-I',
-'/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602',
+'/home/cliff/pyworkspace/lf_xls/res',
         ]
 
 def Settings( **kwargs ):
@@ -47,11 +39,7 @@ def PythonSysPath( **kwargs ):
 
   sys_path[ 0:0 ] = [ p.join( DIR_OF_THIS_SCRIPT ),
 p.join('/home/cliff/pyworkspace/lf_xls/utils'),
-p.join('/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-3'),
-p.join('/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-2'),
-p.join('/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602/ST2-1'),
-p.join('/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602/配置文件20200602'),
-p.join('/home/cliff/pyworkspace/lf_xls/ST2注册检数据20200602'),
+p.join('/home/cliff/pyworkspace/lf_xls/res'),
   ]
 
   sys_path.append( p.join( DIR_OF_THIRD_PARTY, 'jedi_deps', 'numpydoc' ) )
