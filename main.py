@@ -49,6 +49,16 @@ def test_formula():
 #0.主曲线+双对数
 
 #1. 定标
+def calc_out1(in_b16, in_b20, in_b21, in_b22, in_c16, in_c20, in_c21, in_c22, in_e6, in_e7, in_e8, in_e9, in_e10):
+    mid_b23=(in_b20 + in_b21 + in_b22)/3
+    mid_c23=(in_c20 + in_c21 + in_c22)/3
+    mid_b17=round((10**(((in_e7 - in_e6)/(((math.log10(in_b16*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
+    mid_c17=round((10**(((in_e7 - in_e6)/(((math.log10(in_c16*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
+    out_b25=round((mid_b23 - mid_b17)/ mid_b17, 4)
+    out_c25=round((mid_c23 - mid_c17)/ mid_c17, 4)
+    print(mid_b17,mid_c17)
+    print(mid_b23,mid_c23)
+    print(out_b25,out_c25)
 
 #2. 准确度
 
@@ -77,7 +87,15 @@ def test_formula():
 def auto_run():
     open_xls(xls_template)
     print(math.log(10,2))
-    print(read_xls(1,1))
+    print(read_xls(2,1))
 
 # test_formula()
 # auto_run()
+# def calc_out1(in_b16, in_b20, in_b21, in_b22, in_c16, in_c20, in_c21, in_c22, in_e6, in_e7, in_e8, in_e9, in_e10):
+open_xls(xls_template)
+calc_out1(read_xls(16,2), read_xls(20,2),read_xls(21,2), read_xls(22,2), 
+        read_xls(16,3), read_xls(20,3),read_xls(21,3),read_xls(22,3),
+        read_xls(6,5),read_xls(7,5),read_xls(8,5),read_xls(9,5),read_xls(10,5))
+# calc_out1(5.04, 40226, 39402,39328,    101.7, 645892,636546,625769,    1444.3381,64304.5915,61377.8843,4.75075,0.22387)
+#auto_run()
+
