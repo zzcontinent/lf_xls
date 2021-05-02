@@ -56,11 +56,35 @@ def calc_out1(in_b16, in_b20, in_b21, in_b22, in_c16, in_c20, in_c21, in_c22, in
     mid_c17=round((10**(((in_e7 - in_e6)/(((math.log10(in_c16*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
     out_b25=round((mid_b23 - mid_b17)/ mid_b17, 4)
     out_c25=round((mid_c23 - mid_c17)/ mid_c17, 4)
+    print("=============")
     print(mid_b17,mid_c17)
+    print("=============")
     print(mid_b23,mid_c23)
+    print("=============")
     print(out_b25,out_c25)
+    print("=============")
+    return out_b25, out_c25
 
 #2. 准确度
+def calc_out2(in_a34, in_c34, in_c35, in_c36):
+    mid_c37=np.mean([in_c34, in_c35, in_c36])
+    mid_c38=np.std([in_c34, in_c35, in_c36])
+    out_c39=mid_c38/mid_c37
+    out_c40=(mid_c37 - in_a34)/in_a34
+    print("=============")
+    print(out_c39, out_c40)
+    mid_d34=round((10**(((in_e7 - in_e6)/(((math.log10(in_c34*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
+    mid_d35=round((10**(((in_e7 - in_e6)/(((math.log10(in_c35*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
+    mid_d36=round((10**(((in_e7 - in_e6)/(((math.log10(in_c36*1000)*1000/in_e8)**(-in_e9)+1)**in_e10)+in_e6)/1000)), 0)
+    print("=============")
+    print(mid_d34, mid_d35, mid_d36)
+    mid_d37=np.mean([mid_d34, mid_d35, mid_d36])
+    mid_d38=np.std([mid_d34, mid_d35, mid_d36])
+    mid_d39=mid_d38/mid_d37
+    print("=============")
+    print(mid_d37, mid_d38, mid_d39)
+    
+
 
 #3. 最低检测限
 
@@ -93,7 +117,7 @@ def auto_run():
 # auto_run()
 # def calc_out1(in_b16, in_b20, in_b21, in_b22, in_c16, in_c20, in_c21, in_c22, in_e6, in_e7, in_e8, in_e9, in_e10):
 open_xls(xls_template)
-calc_out1(read_xls(16,2), read_xls(20,2),read_xls(21,2), read_xls(22,2), 
+calc_out1(read_xls(16,2), read_xls(20,2),read_xls(21,2), read_xls(22,2),
         read_xls(16,3), read_xls(20,3),read_xls(21,3),read_xls(22,3),
         read_xls(6,5),read_xls(7,5),read_xls(8,5),read_xls(9,5),read_xls(10,5))
 # calc_out1(5.04, 40226, 39402,39328,    101.7, 645892,636546,625769,    1444.3381,64304.5915,61377.8843,4.75075,0.22387)
